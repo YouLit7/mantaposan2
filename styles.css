@@ -1,0 +1,470 @@
+* {
+  margin: 0; /* убираем внешние отступы */
+  padding: 0; /* убираем внутренние отступы */
+  box-sizing: border-box; /* ширина включает padding и border */
+}
+
+/* Стили для всей страницы */
+body {
+  font-family: 'Raleway', sans-serif; /* основной шрифт */
+  background-color: rgb(134, 156, 141); /* фон страницы белый */
+}
+
+/* Главный контейнер, ограничивает ширину 1440px */
+.wrapper {
+  max-width: 1440px; /* максимальная ширина */
+  margin: 0 auto; /* центрирование по горизонтали */
+  background-color: rgb(41, 41, 41); /* фон контейнера */
+}
+
+/* ========== ШАПКА ========== */
+.header {
+  display: flex; /* flex‑контейнер */
+  justify-content: space-between; /* элементы прижаты к краям */
+  align-items: center; /* выравнивание по вертикали по центру */
+  padding: 33px 165px 32px 165px; /* отступы: сверху, справа, снизу, слева */
+  background-color: rgb(78, 78, 78); /* фон шапки */
+}
+
+/* Блок логотипа */
+.logo {
+  display: flex; /* горизонтальное расположение */
+  align-items: center; /* выравнивание по центру */
+  gap: 8px; /* расстояние между звездой и текстом */
+}
+
+/* Иконка звезды в логотипе */
+.logo-icon {
+  width: 35px; /* ширина */
+  height: 35px; /* высота */
+  background-image: url('./images/images-Photoroom.png'); /* картинка звезды */
+  background-size: cover; /* картинка покрывает весь блок */
+  background-color: rgb(78, 78, 78);
+}
+
+/* Текст логотипа */
+.logo-text {
+  font-size: 20px; /* размер шрифта */
+  font-weight: 700; /* жирность (Bold) */
+  color: rgba(89, 141, 102, 1); /* зелёный цвет */
+}
+
+/* Навигационное меню */
+.nav {
+  display: flex; /* горизонтальное расположение */
+  gap: 60px; /* расстояние между ссылками */
+}
+
+/* Ссылки в меню */
+.nav a {
+  font-size: 20px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  text-decoration: none; /* убираем подчёркивание */
+  color: rgba(44, 45, 53, 1); /* тёмно‑серый цвет */
+}
+
+/* Иконка корзины */
+.cart-icon {
+  width: 24px; /* ширина */
+  height: 24px; /* высота */
+  background-image: url('./image/shoppingcart.png'); /* картинка корзины */
+  background-size: contain; /* картинка вписывается без обрезки */
+}
+/* ========== ГЛАВНЫЙ БАННЕР ========== */
+.hero {
+  display: flex; /* flex‑контейнер */
+  gap: 30px; /* расстояние между колонками */
+  align-items: center; /* выравнивание по вертикали */
+  padding: 0 165px; /* отступы слева и справа */
+}
+
+/* Левая часть — фотография */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex: 1; /* занимает половину ширины */
+  background-image: url('photo_2026-08-16_16-24-41.jpg'); /* картинка */
+  background-size: cover; /* покрывает блок */
+  background-position: center; /* центрирование */
+  transform: scaleX(-1); /* зеркальное отражение */
+}
+
+/* Правая часть с текстом */
+.hero-content {
+  flex: 1; /* занимает половину ширины */
+  display: flex; /* flex‑контейнер */
+  flex-direction: column; /* вертикальное расположение */
+  gap: 60px; /* расстояние между элементами */
+}
+
+/* Заголовок */
+.hero-title {
+  font-size: 60px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  line-height: 1.1; /* межстрочный интервал 110% */
+  color: rgb(93, 143, 126); /* тёмный цвет */
+}
+
+/* Выделение слова "Ink. House" */
+.hero-title .accent {
+  color: rgba(89, 141, 102, 1); /* зелёный акцент */
+}
+
+/* Описание под заголовком */
+.hero-description {
+  font-size: 18px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  line-height: 1.5; /* межстрочный интервал 150% */
+  color: rgba(134, 145, 138, 1); /* светло‑серый цвет */
+}
+
+/* Кнопка "Продукция" */
+.hero-btn {
+  width: fit-content; /* ширина по содержимому */
+  background: transparent; /* прозрачный фон */
+  border: 1px solid rgba(89, 141, 102, 1); /* зелёная рамка */
+  padding: 20px 60px; /* отступы внутри */
+  font-size: 20px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(89, 141, 102, 1); /* зелёный текст */
+  cursor: pointer; /* курсор‑рука */
+  transition: all 0.2s; /* плавный переход при наведении */
+}
+
+/* Эффект при наведении на кнопку */
+.hero-btn:hover {
+  background-color: rgba(89, 141, 102, 1); /* фон становится зелёным */
+  color: white; /* текст белый */
+}
+/* ========== РЕПРОДУКЦИИ ========== */
+.reproductions {
+  padding: 70px 165px 0 165px; /* отступы: сверху 70, справа/слева 165, снизу 0 */
+}
+
+/* Верхняя строка: заголовок + фильтры */
+.repro-header {
+  display: flex; /* flex‑контейнер */
+  justify-content: space-between; /* заголовок слева, фильтры справа */
+  align-items: center; /* выравнивание по вертикали */
+  margin-bottom: 30px; /* отступ снизу */
+}
+
+/* Заголовок раздела */
+.section-title {
+  font-size: 40px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgb(105, 108, 134); /* тёмный цвет */
+}
+
+/* Блок кнопок фильтров */
+.filters {
+  display: flex; /* горизонтальное расположение */
+  gap: 32px; /* расстояние между кнопками */
+}
+
+/* Кнопка фильтра */
+.filter {
+  padding: 10px 20px; /* внутренние отступы */
+  border-radius: 20px; /* скругление углов */
+  background-color: rgba(212, 232, 217, 1); /* светло‑зелёный фон */
+  border: none; /* убираем рамку */
+  font-size: 20px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(44, 45, 53, 1); /* тёмный цвет */
+  cursor: pointer; /* курсор‑рука */
+}
+
+/* Активная кнопка фильтра (Франция) */
+.filter.active {
+  background-color: rgba(55, 107, 68, 1); /* тёмно‑зелёный фон */
+  color: white; /* белый текст */
+}
+
+/* Сетка карточек (3 колонки) */
+.cards-grid {
+  display: grid; /* grid‑контейнер */
+  grid-template-columns: repeat(3, 1fr); /* три равные колонки */
+  gap: 30px; /* расстояние между карточками */
+  margin-top: 30px; /* отступ сверху */
+}
+
+/* Одна карточка товара */
+.card {
+  background-color: rgb(73, 105, 86); /* фон карточки */
+  overflow: hidden; /* обрезаем всё, что выходит за границы */
+  display: flex; /* flex‑контейнер */
+  flex-direction: column; /* вертикальное расположение */
+}
+
+
+.card-img {
+  height: 422px; /* фиксированная высота */
+  background-size: cover; /* картинка покрывает блок */
+  background-position: center; /* центрирование */
+  margin: 20px; /* отступы со всех сторон */
+  margin-bottom: 0; /* снизу отступ не нужен */
+}
+
+
+.card-info {
+  padding: 20px; /* отступы внутри */
+  display: flex; /* flex‑контейнер */
+  flex-direction: column; /* вертикальное расположение */
+  gap: 8px; /* расстояние между элементами */
+}
+
+/* Имя художника */
+.artist {
+  font-size: 18px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(134, 145, 138, 1); /* светло‑серый */
+}
+
+/* Название картины */
+.title {
+  font-size: 30px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(44, 45, 53, 1); /* тёмный цвет */
+}
+
+/* Техника и размер */
+.details {
+  font-size: 18px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(44, 45, 53, 1); /* тёмный цвет */
+}
+
+/* Цена */
+.price {
+  font-size: 24px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(89, 141, 102, 1); /* зелёный цвет */
+  margin-top: 16px; /* отступ сверху */
+}
+
+/* Кнопка "В корзину" */
+.card-btn {
+  background: transparent; /* прозрачный фон */
+  border: 1px solid rgba(89, 141, 102, 1); /* зелёная рамка */
+  padding: 20px 0; /* отступы: сверху/снизу 20px, слева/справа 0 */
+  font-size: 20px; /* размер шрифта */
+  font-weight: 500; /* полужирный */
+  color: rgba(89, 141, 102, 1); /* зелёный текст */
+  cursor: pointer; /* курсор‑рука */
+  width: 100%; /* на всю ширину родителя */
+  margin-top: 8px; /* отступ сверху */
+  transition: all 0.2s; /* плавный переход */
+}
+
+/* Эффект при наведении на кнопку карточки */
+.card-btn:hover {
+  background-color: rgba(89, 141, 102, 1); /* зелёный фон */
+  color: white; /* белый текст */
+}
+.footer {
+    background-color: #1a1a1a; /* Темный фон в стиле Terraria */
+    color: #e0e0e0;
+    padding: 40px 20px 20px 20px;
+    margin-top: 60px; /* Отступ от сетки карточек */
+    border-top: 3px solid #4a3b2c; /* Коричневая рамка в стиле блоков игры */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-credits {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #aaaaaa;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-col h4 {
+    color: #da9100; 
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+
+.footer-col a:hover {
+    color: #ffb82b; 
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #333333;
+    text-align: center;
+    font-size: 12px;
+    color: #777777;
+}
+.card-img {
+  max-width: 100%;
+  height: auto; 
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 25px 40px; /* уменьшаем огромные боковые отступы */
+  }
+
+  .hero {
+    padding: 40px;
+    flex-direction: column; /* выстраиваем баннер вертикально */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 500px; /* ограничиваем фото, чтобы не было гигантским */
+    height: 350px;
+  }
+
+  .hero-content {
+    align-items: center;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 42px; /* уменьшаем шрифт для экранов поменьше */
+  }
+
+  .reproductions {
+    padding: 50px 40px 0 40px;
+  }
+
+  .repro-header {
+    flex-direction: column; /* заголовок и фильтры друг под другом */
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* сетка в 2 колонки на планшете */
+    gap: 20px;
+  }
+  
+  .footer-container {
+    padding: 0 20px;
+  }
+}
+
+/* Мобильные устройства (до 768px) */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 20px;
+    flex-direction: column; /* меню падает под логотип */
+    gap: 20px;
+  }
+
+  .nav {
+    gap: 25px; /* скандинавский плотный шаг меню */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    width: 100%; /* кнопка на весь экран мобильного */
+    text-align: center;
+  }
+
+  .reproductions {
+    padding: 40px 20px 0 20px;
+  }
+
+  .filters {
+    flex-wrap: wrap; /* фильтры переносятся, если не влезают */
+    gap: 12px;
+    width: 100%;
+  }
+
+  .filter {
+    flex: 1 1 calc(50% - 12px); /* кнопки фильтров по 2 в ряд */
+    text-align: center;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr; /* сетка в 1 колонку на телефоне */
+    gap: 25px;
+  }
+
+  .card-img {
+    height: 300px; /* чуть уменьшаем высоту картинок на мобильных */
+  }
+
+  .footer-links {
+    flex-direction: column; /* ссылки футера в одну колонку */
+    gap: 30px;
+  }
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* анимация поднятия и тени */
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* легкое поднятие карточки вверх */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35); /* появление мягкой тени */
+}
+.nav a:hover {
+  color: rgba(89, 141, 102, 1);
+}
+.nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
